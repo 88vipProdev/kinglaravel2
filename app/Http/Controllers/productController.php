@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\admin\product;
+use App\Models\admin\product as AdminProduct;
+use App\Models\product;
 use Illuminate\Http\Request;
+
+
 
 class productController extends Controller
 {   
@@ -12,7 +15,7 @@ class productController extends Controller
     private $product ;
      public function __construct()
      {
-            $this ->product = new product();
+        $this->product = new product();
      }
 
     public function createView()
@@ -21,7 +24,7 @@ class productController extends Controller
     }
 
     public function create(Request $request)
-    {
+    {       dd($request);
             $request->validate([
                 "name" => 'required | min : 5',
                 'soluong'=>'required | min:5',
@@ -33,13 +36,14 @@ class productController extends Controller
                 'price.required' =>'bat buoc phai nhap '
             ]);
             $data = [
-                'name'  => $request->name,
-                'soluong'=> $request->soluong,
-                'price' =>$request->price
+                 $request->name,
+                 $request->soluong,
+                 $request->price
             ];
 
 
-            $this ->product->insert($data);
+            $this->product->createProduct($data);
+        
 
             
     }

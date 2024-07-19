@@ -20,5 +20,5 @@ Route::get('/', function () {
 
 Route ::get('/', [homeController::class ,'index']);
 
-Route :: get('createView',[productController::class ,'createView']);
-Route :: post('create' ,[productController::class , 'create']);
+Route :: get('createView',[productController::class ,'createView'])->name('createView');
+Route :: post('createView' ,[productController::class , 'create'])->name('create');

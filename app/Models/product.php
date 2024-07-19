@@ -1,17 +1,20 @@
 <?php
-namespace App\Models\admin;
-use App\Models\admin\categoriesModel;
-use App\Models\admin\detailModel;
+
+namespace App\Models;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
+use DB;
 
-class product extends Model{
+class product extends Model
+{
+    use HasFactory;
 
 
-    public function insert($data)
+    public function createProduct($data)
     {
-        DB::insert('INSERT INTO  product (name , soluong , price)values(? ,? , ?)',
-        $data);
+         DB::insert('INSERT INTO product (name , soluong ,price)values (? ,? ,?)', $data);
     }
-}
+
+
+}   
