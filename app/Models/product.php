@@ -9,11 +9,20 @@ use DB;
 class product extends Model
 {
     use HasFactory;
-
+        protected $table ='product';
 
     public function createProduct($data)
     {
-         DB::insert('INSERT INTO product (name , soluong ,price)values (? ,? ,?)', $data);
+        $product = new product();
+                $product->name = $data["name"];
+                $product->soluong = $data["soluong"];
+                
+                $product->price = $data["price"];
+              
+                $product ->save();
+
+            
+    
     }
 
 
