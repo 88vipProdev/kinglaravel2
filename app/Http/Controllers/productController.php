@@ -7,11 +7,9 @@ use App\Http\Requests\productRequest ;
 use App\Models\product;
 class productController extends Controller
 {      
-      protected $product;
-      public function __construct(product $product)
-      {
-            $this->product = $product;
-      }
+     
+     
+      
 
 
      public function createView()
@@ -21,15 +19,11 @@ class productController extends Controller
 
      public function create(productRequest  $request)
      { 
-   
-      $datalist = [
-         "name"=>$request->input("name"),
-         
-         "soluong"=>$request->input("soluong"),
-         "price"=>$request->input("price"),
-         
-         ];
-         
-         product::createProduct($datalist);
+            $product = new product();
+            $product->name = $request->name;
+            $product->soluong = $request->soluong;
+            $product->price = $request->price;
+            $product ->save();
+           
      }
 }

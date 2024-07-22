@@ -10,20 +10,9 @@ class product extends Model
 {
     use HasFactory;
         protected $table ='product';
-
-    public function createProduct($data)
-    {
-        $product = new product();
-                $product->name = $data["name"];
-                $product->soluong = $data["soluong"];
-                
-                $product->price = $data["price"];
-              
-                $product ->save();
-
-            
+        protected $fillable = ['name','soluong','price'];
     
-    }
 
+  
 
 }   
