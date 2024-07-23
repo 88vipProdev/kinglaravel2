@@ -26,4 +26,20 @@ class productController extends Controller
             $product ->save();
            
      }
+
+     public function Viewupdate( productRequest  $request ,$id)
+     {
+            $product = product::find($id);
+            return view('update' , compact('id'));
+        
+     }
+
+     public function update(productRequest $request)
+     {
+         $product = new product();
+         $product->name = $request->name;
+         $product->soluong = $request->soluong;
+         $product->price = $request->price;
+         $product ->save();
+     }
 }
