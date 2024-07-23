@@ -27,10 +27,10 @@ class productController extends Controller
            
      }
 
-     public function Viewupdate( productRequest  $request ,$id)
+     public function Viewupdate($id)
      {
             $product = product::find($id);
-            return view('update' , compact('id'));
+            return view('update' , compact('product'));
         
      }
 

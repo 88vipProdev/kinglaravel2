@@ -8,20 +8,17 @@
 <body>
 <form action="{{ route('update', $product->id) }}" method="POST" enctype="multipart/form-data">
               @csrf
-              @method('PUT')
+              <!-- @method('POST') -->
       
               <div class="mb-3">
                 <label for="name" class="form-label">Tên sản phẩm</label>
                 <input type="text" name="name" value="{{ $product->name }}" class="form-control">
               </div>
-      
-              
-      
+
               <div class="mb-3">
-                <label for="soluong" class="form-label">Vị trí</label>
-                <input type="text" name="location" value="{{ $product->soluong }}" class="form-control">
+                <label for="name" class="form-label">số lượng</label>
+                <input type="text" name="name" value="{{ $product->soluong }}" class="form-control">
               </div>
-      
               <div class="mb-3">
                 <label for="price" class="form-label">Giá</label>
                 <input type="text" name="price" value="{{ $product->price }}" class="form-control">

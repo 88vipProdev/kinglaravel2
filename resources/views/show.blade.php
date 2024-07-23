@@ -12,6 +12,7 @@
                     <th>Name</th>
                     <th>soluong</th>
                     <th>price</th>
+                    <th>update</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,7 +21,9 @@
                         <td>{{$listItem->name}}</td>
                         <td>{{$listItem->soluong}}</td>
                         <td>{{$listItem->price}}</td>
-                       
+                        <td><a href="{{ route('Viewupdate', ['id' =>$listItem->id]) }}" class="btn btn-primary">Update</a></td>
+                    
+                        
                     </tr>
                 @endforeach
             </tbody>
