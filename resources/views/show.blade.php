@@ -23,7 +23,7 @@
                         <td>{{$listItem->price}}</td>
                         <td><a href="{{ route('Viewupdate', ['id' =>$listItem->id]) }}" class="btn btn-primary">Update</a></td>
                     
-                        
+                        <td><a href="{{ route('delete', ['id' =>$listItem->id]) }}" class="btn btn-primary">delete</a></td>
                     </tr>
                 @endforeach
             </tbody>

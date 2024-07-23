@@ -43,4 +43,9 @@ class productController extends Controller
          $product->price = $request->price;
          $product ->save();
      }
+//      xoa du lieu
+     public function delete($id)
+     {
+              $product = product::destroy($id);
+     }
 }
