@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\productController;
+use App\Http\Controllers\categoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +27,6 @@ Route ::get('show', [homeController::class , 'show'])->name('show');
 Route::get('Viewupdate/{id}' ,[productController::class ,'Viewupdate'])->name('Viewupdate');
 Route::post('Viewupdate/{id}', [productController::class , 'update'])->name('update');
 Route::get('delete/{id}' ,[productController::class ,'delete'])->name('delete');
+
+Route :: get('createCategories' , [categoriesController::class, 'createCategories'])->name("createCategories");
+Route::post('createCategories',[categoriesController::class , 'add'])->name("addCategories");

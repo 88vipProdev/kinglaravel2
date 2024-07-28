@@ -48,4 +48,6 @@ class productController extends Controller
      {
               $product = product::destroy($id);
      }
+
+     
 }
