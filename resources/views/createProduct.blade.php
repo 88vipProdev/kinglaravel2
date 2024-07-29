@@ -8,6 +8,13 @@
 <body>
             <form action="{{route('create')}}" method="POST" enctype="multipart/form-data">
                 @csrf
+
+                <label for="categories_id" class="form-label">Category</label><br>
+                <select name="categories_id" id="categories_id" class="form-select" required>
+                <option value="">Select category</option><br>
+                @foreach ($categories as $id=>$name)<br>
+                <option value="{{$id}}">{{ $name }}</option><br>
+                @endforeach
                  <label for="name">name</label><br>
                  <input type="text" name="name" id="name" class="form-control" placeholder="Name"><br>
                     @error('name')
@@ -25,7 +32,12 @@
                         @error('price')
                             <span style="color: red;">{{$message}}</span>
                         @enderror
-                 <button type="submit" class="btn btn-primary">Create</button>
-            </form>
+
+                        
+               
+                        
+                    
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form >
 </body>
 </html>

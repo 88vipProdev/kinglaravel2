@@ -26,7 +26,8 @@ class productRequest extends FormRequest
         return [
             "name" =>"required|min:6",
             "soluong" =>"required|integer",
-            "price"=>"required|integer"
+            "price"=>"required|integer",
+            'categories_id'=>'required',
         ];
 
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\productRequest ;
 use App\Models\product;
+use App\Models\categories;
 class productController extends Controller
 {      
      
@@ -13,17 +14,21 @@ class productController extends Controller
 
 
      public function createView()
-     {
-        return view('createProduct');
+     {  
+        $categories = categories ::pluck("name","id");
+       
+        return view('createProduct' ,compact('categories'));
+
      }
 
      public function create(productRequest  $request)
      { 
-            $product = new product();
-            $product->name = $request->name;
-            $product->soluong = $request->soluong;
-            $product->price = $request->price;
-            $product ->save();
+           $product = Product::create([
+               'name'=> $request->name,
+               'soluong'=> $request->soluong,
+               'price'=> $request->price,
+               'categories_id'=>$request->categories_id
+           ]);
            
      }
 
