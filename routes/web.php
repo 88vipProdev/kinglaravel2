@@ -30,3 +30,6 @@ Route::get('delete/{id}' ,[productController::class ,'delete'])->name('delete');
 
 Route :: get('createCategories' , [categoriesController::class, 'createCategories'])->name("createCategories");
 Route::post('createCategories',[categoriesController::class , 'add'])->name("addCategories");
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
