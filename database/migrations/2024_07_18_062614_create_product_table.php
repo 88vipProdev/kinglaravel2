@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('price');
             $table->string('soluong');
             $table->unsignedBigInteger("categories_id");
-            // $table ->foreign("categories_id")->references("id")->on("categories")->onDelete("cascade");
+            $table ->foreign("categories_id")->references("id")->on("categories")->onDelete("cascade");
             $table->timestamps();
         });
     }
