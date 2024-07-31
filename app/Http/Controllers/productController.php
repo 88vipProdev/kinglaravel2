@@ -39,8 +39,7 @@ class productController extends Controller
         
      }
 
-     public function update(productRequest $request , $id
-     )
+     public function update(productRequest $request , $id)
      {
          $product = product::find($id);
          $product->name = $request->name;
@@ -54,5 +53,10 @@ class productController extends Controller
               $product = product::destroy($id);
      }
 
+     public function show()
+     {
+        $product = product::all();
+        return view('show' ,compact('product'));
+     }
      
 }
