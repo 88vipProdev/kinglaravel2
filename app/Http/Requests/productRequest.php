@@ -27,7 +27,7 @@ class productRequest extends FormRequest
             "name" =>"required|min:6",
             "soluong" =>"required|integer",
             "price"=>"required|integer",
-            'categories_id'=>'required',
+            // 'categories_id'=>'required',
         ];
 
     }

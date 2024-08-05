@@ -35,17 +35,20 @@ class productController extends Controller
      public function Viewupdate($id)
      {
             $product = product::find($id);
-            return view('update' , compact('product'));
+           
+            return view('update' , compact('product'));    
         
      }
 
      public function update(productRequest $request , $id)
-     {
+     {     
          $product = product::find($id);
+         
          $product->name = $request->name;
          $product->soluong = $request->soluong;
          $product->price = $request->price;
          $product ->save();
+         return redirect()->back();
      }
 //      xoa du lieu
      public function delete($id)

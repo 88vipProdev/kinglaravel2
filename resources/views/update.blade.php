@@ -6,10 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-<form action="{{ route('update', $product->id) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('update', $product->id) }}" method="POST">
               @csrf
-              <!-- @method('POST') -->
-      
+              @method('POST')
+              <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+              </ul>
               <div class="mb-3">
                 <label for="name" class="form-label">Tên sản phẩm</label>
                 <input type="text" name="name" value="{{ $product->name }}" class="form-control">
